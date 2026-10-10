@@ -1,0 +1,144 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Banoth Abhinav | Portfolio</title>
+<style>
+  :root { --bg:#0f172a; --card:#1e293b; --text:#e2e8f0; --muted:#94a3b8; --accent:#38bdf8; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  html { scroll-behavior:smooth; }
+  body { font-family:system-ui,Segoe UI,Arial,sans-serif; background:var(--bg); color:var(--text); line-height:1.6; }
+  nav { position:sticky; top:0; background:rgba(15,23,42,.95); padding:14px 24px; display:flex; gap:20px; flex-wrap:wrap; border-bottom:1px solid #334155; }
+  nav a { color:var(--muted); text-decoration:none; font-size:15px; }
+  nav a:hover { color:var(--accent); }
+  section { max-width:900px; margin:0 auto; padding:60px 24px; }
+  h1 { font-size:2.6rem; }
+  h2 { color:var(--accent); margin-bottom:20px; font-size:1.6rem; }
+  .hero p.role { color:var(--accent); font-size:1.2rem; margin:8px 0 16px; }
+  .muted { color:var(--muted); }
+  .card { background:var(--card); padding:20px; border-radius:12px; margin-bottom:16px; }
+  .card h3 { margin-bottom:6px; }
+  .tags { display:flex; flex-wrap:wrap; gap:10px; }
+  .tag { background:var(--card); border:1px solid #334155; padding:6px 14px; border-radius:20px; font-size:14px; }
+  .btn { display:inline-block; margin:8px 10px 0 0; padding:10px 20px; border-radius:8px; background:var(--accent); color:#0f172a; text-decoration:none; font-weight:600; }
+  .btn.alt { background:transparent; color:var(--accent); border:1px solid var(--accent); }
+  footer { text-align:center; padding:30px; color:var(--muted); font-size:14px; }
+.gallery { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:16px; }
+body { background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 45%, #064e3b 100%); background-attachment: fixed; }
+nav { backdrop-filter: blur(8px); }
+.hero { text-align:center; padding-top:100px; padding-bottom:100px; }
+.hero h1 { font-size:3.6rem; letter-spacing:1px; }
+.tagline { text-shadow: 0 0 24px rgba(56,189,248,.45); }
+section h2 { border-bottom:2px solid var(--accent); display:inline-block; padding-bottom:6px; }
+.card { border-left:4px solid var(--accent); transition: transform .2s, box-shadow .2s; }
+.card:hover { transform: translateY(-4px); box-shadow: 0 10px 24px rgba(0,0,0,.35); }
+.tag { transition: background .2s, color .2s; }
+.tag:hover { background: var(--accent); color:#0f172a; }
+.btn:hover { opacity:.85; }
+body { background: linear-gradient(-45deg,#0f172a,#1e1b4b,#064e3b,#0c4a6e); background-size:400% 400%; animation: bgShift 18s ease infinite; }
+@keyframes bgShift { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+body::before, body::after { content:""; position:fixed; border-radius:50%; filter:blur(90px); opacity:.35; z-index:0; pointer-events:none; }
+body::before { width:420px; height:420px; background:#38bdf8; top:-120px; left:-100px; animation: floatA 14s ease-in-out infinite; }
+body::after { width:480px; height:480px; background:#10b981; bottom:-160px; right:-120px; animation: floatB 17s ease-in-out infinite; }
+@keyframes floatA { 0%,100%{transform:translate(0,0)} 50%{transform:translate(120px,80px)} }
+@keyframes floatB { 0%,100%{transform:translate(0,0)} 50%{transform:translate(-120px,-80px)} }
+nav { z-index:10; background:rgba(15,23,42,.55); backdrop-filter:blur(12px); }
+section, footer { position:relative; z-index:1; }
+section { animation: rise .9s ease both; }
+@keyframes rise { from{opacity:0; transform:translateY(30px)} to{opacity:1; transform:translateY(0)} }
+.hero h1 { font-size:4rem; background:linear-gradient(90deg,#38bdf8,#a7f3d0,#38bdf8); background-size:200% auto; -webkit-background-clip:text; background-clip:text; color:transparent; animation: shine 6s linear infinite; }
+@keyframes shine { to { background-position:200% center; } }
+.tagline { font-size:2.6rem; }
+.card { background:rgba(255,255,255,.06); backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,.12); border-left:4px solid var(--accent); }
+.tag { background:rgba(255,255,255,.07); backdrop-filter:blur(6px); }
+.gallery img { box-shadow:0 20px 50px rgba(0,0,0,.5); border:1px solid rgba(255,255,255,.15); }
+.btn { box-shadow:0 0 20px rgba(56,189,248,.5); }
+section h2 { letter-spacing:1px; }
+:root { --bg:#000000; --card:#0d0d12; --text:#f1f5f9; --muted:#9ca3af; --accent:#38bdf8; }
+body { background:#000000; animation:none; }
+body::before { background:#38bdf8; opacity:.12; }
+body::after { background:#6366f1; opacity:.10; }
+nav { background:rgba(0,0,0,.75); border-bottom:1px solid rgba(255,255,255,.08); }
+.card { background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); border-left:4px solid var(--accent); }
+.tag { background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1); }
+.hero h1 { background:linear-gradient(90deg,#ffffff,#38bdf8,#ffffff); background-size:200% auto; -webkit-background-clip:text; background-clip:text; color:transparent; }
+.gallery img { box-shadow:0 20px 50px rgba(56,189,248,.15); }
+.gallery img { width:100%; max-width:420px; height:520px; object-fit:cover; object-position:top; border-radius:12px; display:block; }</style>
+</head>
+<body>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#projects">Projects</a>
+  <a href="#skills">Skills</a>
+  <a href="#sports">Sports</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section class="hero">
+  <h1>Banoth Abhinav</h1>
+  <p class="tagline">Save Soil. Live Fully.</p>
+  <p class="role">Operations Research &amp; Data Analytics</p>
+  <p class="muted">"Hi, I'm Abhinav Banoth. I'm a first-year M.Tech student in Operations Research and Data Analytics at IIT Kharagpur. I did my B.Tech in Mechanical Engineering at NIT Calicut. I'm interested in using optimization and analytics to solve real operational problems, especially in the airline industry.</p>
+  <a class="btn" href="#projects">View my work</a>
+  <a class="btn alt" href="#contact">Get in touch</a>
+</section>
+
+<section id="about">
+  <h2>About me</h2>
+  <p>Outside academics, I'm an outdoors person. I love trekking, swimming in lakes and ponds, and trying adventure activities. Outside academics, I'm an outdoors person. I love trekking, swimming in lakes and ponds, and trying adventure activities. I come from a farming background, and practiced few techniques like composting, crop rotation, mulching and natural pest methods.I compete in badminton at a proffesional level and also played cricket at inter-NIT, district(Calicut) and North Zone level in Kerala.
+
+living the life to the fullest, with a heart full of joy. Nature is my favourite escape, though I still can't convince the trees to laugh at my jokes,but they do respond in certain way.
+
+.</p>
+.tagline { font-size:2.4rem; font-weight:800; color:var(--accent); margin:10px 0 16px; line-height:1.2; }
+<p style="margin-top:12px"></p></section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="card">
+    <h3>Aircraft Scheduling using CPLEX</h3>
+    <p class="muted">In progress. Building an optimization model for aircraft scheduling with IBM CPLEX.</p>
+  </div>
+  <div class="card">
+    <h3>Demand Forecasting + Transportation Problem</h3>
+    <p class="muted">An illustrative case study integrating demand forecasting with the transportation problem.</p>
+  </div>
+  <div class="card">
+    <h3>Gurobi Optimization</h3>
+    <p class="muted">Hands-on experience modelling and solving optimization problems in Gurobi.</p>
+  </div>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="tags">
+    <span class="tag">Python</span><span class="tag">NumPy</span><span class="tag">Pandas</span>
+    <span class="tag">Matplotlib</span><span class="tag">Seaborn</span>
+    <span class="tag">Gurobi</span><span class="tag">CPLEX</span>
+    <span class="tag">Operations Research</span><span class="tag">Data Analytics</span>
+  </div>
+</section>
+
+<section id="sports">
+  <h2>SPORTS</h2>
+  <p>I play badminton at a competitive level. I had represented my college at inter-NIT tournaments and played at district level and at zonal level for the North Zone in Kerala,We also won the second place in Kerala Cricket Premier League(north zone).</p>
+</section>
+
+<section id="gallery">
+  <h2>Gallery</h2>
+  <div class="gallery">
+    <img src="{% static 'home/images/cric.jpeg' %}" alt="Cricket">
+  </div>
+</section>
+<section id="contact">
+  <h2>Contact</h2>
+  <a class="btn" href="mailto:abhisper@gmail.com">abhisper@gmail.com</a>
+  <a class="btn alt" href="https://www.linkedin.com/in/b-abhinav-318b49253" target="_blank">LinkedIn</a>
+</section>
+
+<footer>&copy; 2026 Banoth Abhinav</footer>
+</body>
+</html>
