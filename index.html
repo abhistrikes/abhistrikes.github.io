@@ -152,22 +152,22 @@ nav { background:rgba(0,0,0,.75); border-bottom:1px solid rgba(255,255,255,.08);
   </div>
 
   <div class="card">
-    <h3>Gate Assignment IP &ndash; Chong &amp; Nordin (2015) Replication</h3>
-    <p class="meta">Aug'26 &ndash; Sep'26 &middot; IBM CPLEX (OPL, DOcplex)</p>
+    <h3>Bearing Fault Diagnosis with ML and a Local LLM</h3>
+    <p class="meta">Oct'26 &ndash; Nov'26 &middot; Python, scikit-learn, XGBoost, Ollama</p>
     <ul>
-      <li>Formulated the integer program in OPL and Python DOcplex and reproduced all 3 published optimal solutions after finding and correcting 2 data errors in the paper.</li>
-      <li>Proved total unimodularity of the constraint matrix and mapped 8 distinct optimal assignments across the full range of objective weights.</li>
+      <li>Built an envelope-analysis pipeline on the MFPT bearing vibration data: 16 time-domain, envelope-spectrum (BPFO/BPFI) and band-energy features per 0.25 s window, with the train/test split made by recording.</li>
+      <li>The SVM reached 100% accuracy (macro F1 1.000) on 96 held-out windows, including unseen loads of 250 and 300 lbs. XGBoost reached 99.0% and Random Forest 96.9%.</li>
+      <li>Added rule-based severity (kurtosis, envelope ratios) and a local llama3.2 LLM (Ollama) that writes maintenance reports. Computing every number and decision in Python removed the LLM's race mix-ups, wrong numbers and unsuitable advice.</li>
     </ul>
-    <!-- <div class="links"><a href="#" target="_blank">GitHub</a></div> -->
+    <div class="links"><a href="https://github.com/abhistrikes/predictive-maintenance-vibration-llm" target="_blank" rel="noopener">GitHub</a></div>
   </div>
 
   <div class="card">
-    <h3>Bearing Predictive Maintenance with an LLM Assistant</h3>
-    <p class="meta">Oct'26 &middot; Python, scikit-learn, LLM</p>
+    <h3>Gate Assignment IP &ndash; Chong &amp; Nordin (2015) Replication</h3>
+    <p class="meta">Aug'26 &ndash; Present &middot; IBM CPLEX (OPL, DOcplex) &middot; <strong style="color:#f59e0b">In progress</strong></p>
     <ul>
-      <li>Turned the NASA IMS run-to-failure vibration data (3,140 recordings, 20 kHz) into time-domain and envelope-spectrum features.</li>
-      <li>An Isolation Forest trained only on healthy data flagged all 3 bearing failures 55&ndash;173 hours in advance with no false alarms (leave-one-bearing-out validation).</li>
-      <li>An LLM turns the model's evidence report into plain-language maintenance advice for technicians.</li>
+      <li>Formulated the integer program in OPL and Python DOcplex and reproduced all 3 published optimal solutions after finding and correcting 2 data errors in the paper.</li>
+      <li>Proved total unimodularity of the constraint matrix and mapped 8 distinct optimal assignments across the full range of objective weights.</li>
     </ul>
     <!-- <div class="links"><a href="#" target="_blank">GitHub</a></div> -->
   </div>
@@ -194,7 +194,7 @@ nav { background:rgba(0,0,0,.75); border-bottom:1px solid rgba(255,255,255,.08);
   </div>
   <div class="skill-group">
     <h3>Machine Learning</h3>
-    <div class="tags"><span class="tag">Gradient Boosting</span><span class="tag">Quantile Regression</span><span class="tag">Random Forest</span><span class="tag">Isolation Forest</span><span class="tag">SVM</span><span class="tag">k-means</span><span class="tag">Logistic Regression</span></div>
+    <div class="tags"><span class="tag">Gradient Boosting</span><span class="tag">Quantile Regression</span><span class="tag">Random Forest</span><span class="tag">Isolation Forest</span><span class="tag">SVM</span><span class="tag">XGBoost</span><span class="tag">k-means</span><span class="tag">Logistic Regression</span><span class="tag">Envelope Analysis</span><span class="tag">Local LLMs (Ollama)</span></div>
   </div>
 </section>
 
