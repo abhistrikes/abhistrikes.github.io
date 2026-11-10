@@ -142,14 +142,13 @@ nav { background:rgba(0,0,0,.75); border-bottom:1px solid rgba(255,255,255,.08);
 
   <div class="card">
     <h3>Robust Airport Gate Assignment under Delay Uncertainty</h3>
-    <p class="meta">Oct'26 &ndash; Present &middot; Python, Gurobi, scikit-learn</p>
+    <p class="meta">Oct'26 &ndash; Nov'26 &middot; Python, Gurobi, scikit-learn</p>
     <ul>
-      <li>Built an estimate-then-optimise pipeline: gradient-boosting quantile models of arrival/departure delay (trained on 23,900 flights) feed a stochastic MILP (&#350;eker &amp; Noyan, 2012) solved in Gurobi.</li>
-      <li>Generated 1,000 delay scenarios by residual bootstrap and reduced them to 30 with k-means. A scenario-aggregation reformulation keeps model size independent of the number of scenarios.</li>
-      <li>A rolling-horizon heuristic warm-starts the exact MILP, cutting solve time about 4&times;.</li>
-      <li>Over 500 out-of-sample days, cut expected gate conflicts by 49% and overlap minutes by 36% vs. the schedule-based plan.</li>
+      <li>Built a predict, simulate, optimise pipeline on synthetic hub data (Poisson arrivals, gamma delays): gradient boosting forecasts arrival delays from 120 past days (MAE 13.97 min, cross-validation grouped by day).</li>
+      <li>Turned the forecast into 1,000 delay scenarios by residual bootstrap and solved a stochastic MILP (&#350;eker &amp; Noyan, 2012) in Gurobi. Clique constraints and an exact scenario aggregation cut the model from 76,970 to 922 constraints and the solve time from about 48 s to 3.5 s.</li>
+      <li>On 300 out-of-sample days, cut gate conflicts by 81% vs. the timetable plan (from 0.66 to 0.12 per day; conflict-free days from 53% to 88%). Planning on the point forecast alone was 5.5&times; worse.</li>
     </ul>
-    <!-- <div class="links"><a href="https://github.com/abhistrikes/robust-gate-assignment" target="_blank">GitHub</a></div> -->
+    <div class="links"><a href="https://github.com/abhistrikes/airline-gate-assignment" target="_blank" rel="noopener">GitHub</a></div>
   </div>
 
   <div class="card">
